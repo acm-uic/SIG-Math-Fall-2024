@@ -1,0 +1,29 @@
+**In C++**
+
+Functions for Program:
+- AND, OR, NOT, XdOR, (for later: NOR, NAND), implications
+    - Have converter (EX: && -> ^) for str 
+    - Parser function to read all variables and operators
+    - Could use binary operations
+- Menu function in main (while loop)
+- Instruction function in main (printed once)
+- Display Table Function 
+    - Use a 2d vector (Matrix) for the table
+
+Rules for Syntax:
+AND: a&b = a^b
+OR: a|b = avb
+NOT: !a
+Exclusive OR: axb
+CONDITIONAL RIGHT: a>b
+CONDITIONAL LEFT: a<b
+BICONDITIONAL: a=b
+
+Test cases for input: 
+- Unfinished expression ( a^ )
+- Multiple operators (^v)
+- Operator DNE
+- No input
+- Check for invalid variables 
+- Could use isalpha() 
+- Should be case insensitive
