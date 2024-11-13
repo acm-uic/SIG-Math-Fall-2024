@@ -1,0 +1,48 @@
+Ideally, we can have a function that extracts all the variables and reads what function needs to be used to generate the appropriate truth table.
+Below is some pseudocode that would work for the AND function (p ^ q). 
+-------------------------------------------------------------------------------
+Function GenerateTruthTableAND (Takes 2 parameters i.e. variables p and q)
+    Initialize a 2D vector truthTable to store the truth table data
+    
+    // Add header row to the table
+    Append ["P", "Q", "P ^ Q"] to truthTable
+    
+    // Loop through all possible values of P and Q (0 and 1 for False and True)
+    For each p in [0, 1]
+        For each q in [0, 1]
+            // Calculate the AND result of p and q
+            result = p AND q // Using bitwise AND (&) to represent logical AND
+            
+            // Convert the binary values to "T" (True) or "F" (False)
+            p_str = "T" if p == 1 else "F"
+            q_str = "T" if q == 1 else "F"
+            result_str = "T" if result == 1 else "F"
+            
+            // Append the row [p_str, q_str, result_str] to truthTable
+            Append [p_str, q_str, result_str] to truthTable
+        End For
+    End For
+    
+    // Return the completed truth table
+    Return truthTable
+End Function
+-------------------------------------------------------------------------------
+
+Similarly, repeat GenerateTruthTable function for all operations.
+
+Below is some pseudocode for printing the matrix in a readable fashion in the terminal. 
+-------------------------------------------------------------------------------
+Function DisplayTable(table)
+    // Loop through each row in the 2D vector table
+    For each row in table
+        // Loop through each item in the row
+        For each item in row
+            // Print item followed by a tab for spacing
+            Print item + "\t"
+        End For
+        
+        // Move to the next line after printing each row
+        Print new line
+    End For
+End Function
+-------------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 **In C++**
 
 Functions for Program:
+- Extract function to read the input and call the operation functions below
 - AND, OR, NOT, XdOR, (for later: NOR, NAND), implications
     - Have converter (EX: && -> ^) for str 
     - Parser function to read all variables and operators
