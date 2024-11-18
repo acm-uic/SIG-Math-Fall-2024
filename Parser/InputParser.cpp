@@ -1,6 +1,6 @@
 #include <string>
 
-void getVariables(string input)
+void getVariables(std::string input)
 {
 
 }
