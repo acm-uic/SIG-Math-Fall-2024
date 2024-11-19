@@ -21,7 +21,7 @@ int main()
 
     InputParser myParse = InputParser();
 
-    cout << myParse.findMatchingParenthesis(test) << endl;
+    cout << myParse.findMatchingParenthesis(test, true) << endl;
     
     
     return 0;

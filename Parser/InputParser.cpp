@@ -12,7 +12,7 @@ vector<string> InputParser::splitInput(string input)
   return inputStrings;
 }
 
-string InputParser::findMatchingParenthesis(string input)
+string InputParser::findMatchingParenthesis(string input, bool exclude)
 {
   // Create a holder for the amount of left and right parenthesis
   int rightParenthesis = 0;
@@ -47,7 +47,8 @@ string InputParser::findMatchingParenthesis(string input)
     // Now if we have more than one left parenthesis and the same amount as the right
     if (leftParenthesis > 0 && leftParenthesis == rightParenthesis)
     {
-      // Return the substring of just the parenthesis
+      // Return the substring of just the parenthesis, either with or without the parenthesis
+      if (exclude) return input.substr(leftParenthesisStart+1, inputIndex - leftParenthesisStart - 1);
       return input.substr(leftParenthesisStart, inputIndex - leftParenthesisStart + 1);
     }
   }

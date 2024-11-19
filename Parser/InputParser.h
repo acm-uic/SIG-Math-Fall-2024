@@ -26,5 +26,5 @@ class InputParser
    
     // Takes in an input starting in parenthsis, and returns string of everything
     // between start and end parenthesis
-    string findMatchingParenthesis(string);
+    string findMatchingParenthesis(string, bool);
 };
