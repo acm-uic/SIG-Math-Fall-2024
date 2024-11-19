@@ -2,6 +2,8 @@
 
 #include "Expression.h"
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class InputParser
@@ -12,13 +14,17 @@ class InputParser
     // Position represents the current index in the input string
     int position;
 
+
   public:
     InputParser();
     
     InputParser(string input);
 
-    Expression parseToExpression();
+    vector<string> splitInput(string);
 
     bool isOperator(char);
-  
+   
+    // Takes in an input starting in parenthsis, and returns string of everything
+    // between start and end parenthesis
+    string findMatchingParenthesis(string);
 };
