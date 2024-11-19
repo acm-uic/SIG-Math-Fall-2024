@@ -28,3 +28,4 @@ Test cases for input:
 - Check for invalid variables 
 - Could use isalpha() 
 - Should be case insensitive
+- Invalid number of parenthesis i.e. (((a&b)&c)
