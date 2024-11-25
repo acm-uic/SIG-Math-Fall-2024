@@ -14,6 +14,9 @@ class InputParser
     // Position represents the current index in the input string
     int position;
 
+    void deleteWhitespace();
+
+
 
   public:
     InputParser();
@@ -23,8 +26,6 @@ class InputParser
     vector<string> splitInput();
 
     int findNextOperator(string);
-
-    void deleteWhitespace();
 
     bool isOperator(char);
    
