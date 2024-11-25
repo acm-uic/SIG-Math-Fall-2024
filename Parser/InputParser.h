@@ -20,7 +20,9 @@ class InputParser
     
     InputParser(string input);
 
-    vector<string> splitInput(string);
+    vector<string> splitInput();
+
+    int findNextOperator(string);
 
     bool isOperator(char);
    

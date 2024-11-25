@@ -3,13 +3,25 @@
 #include "Expression.h"
 #include "InputParser.h"
 
-vector<string> InputParser::splitInput(string input)
+vector<string> InputParser::splitInput()
 {
   vector<string> inputStrings;
 
+  string temp = input;
   
 
   return inputStrings;
+}
+
+int InputParser::findNextOperator(string input)
+{
+  for (size_t ind = 0; ind < input.size(); ind++)
+  {
+    if (isOperator(input.at(ind)))
+    {
+      return ind;
+    }
+  }
 }
 
 string InputParser::findMatchingParenthesis(string input, bool exclude)
