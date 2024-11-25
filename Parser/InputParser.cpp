@@ -8,7 +8,7 @@ vector<string> InputParser::splitInput()
   vector<string> inputStrings;
 
   string temp = input;
-  
+
 
   return inputStrings;
 }
@@ -22,6 +22,8 @@ int InputParser::findNextOperator(string input)
       return ind;
     }
   }
+
+  return -1;
 }
 
 string InputParser::findMatchingParenthesis(string input, bool exclude)
