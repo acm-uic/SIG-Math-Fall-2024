@@ -10,7 +10,24 @@ vector<string> InputParser::splitInput()
   string temp = input;
 
 
+
+
   return inputStrings;
+}
+
+void InputParser::deleteWhitespace()
+{
+  string temp = "";
+
+  for (size_t ind = 0; ind < input.size(); ind++)
+  {
+    if (input.at(ind) != ' ')
+    {
+      temp.push_back(input.at(ind));
+    }
+  }
+
+  input = temp;
 }
 
 int InputParser::findNextOperator(string input)

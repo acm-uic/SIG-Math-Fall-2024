@@ -24,6 +24,8 @@ class InputParser
 
     int findNextOperator(string);
 
+    void deleteWhitespace();
+
     bool isOperator(char);
    
     // Takes in an input starting in parenthsis, and returns string of everything
