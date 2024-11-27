@@ -14,7 +14,6 @@ class Value: Expression
   public:
     // Constructors
     Value();
-    Value(bool);
 
     // Setters
     void setValue(bool);

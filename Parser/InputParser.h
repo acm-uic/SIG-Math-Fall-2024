@@ -2,7 +2,8 @@
 
 #include "Expression.h"
 #include <string>
-#include <vector>
+#include <map>
+#include "Value.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ class InputParser
     
     InputParser(string input);
 
-    vector<string> splitInput();
+    map<char, Value*> getValues();
 
     int findNextOperator(string);
 

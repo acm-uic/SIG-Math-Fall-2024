@@ -1,18 +1,59 @@
+#include <exception>
 #include <string>
+#include <map>
 #include <vector>
+#include <stdexcept>
 #include "Expression.h"
 #include "InputParser.h"
+#include "Value.h"
 
-vector<string> InputParser::splitInput()
+// Take our input and return a map
+// The first index is a character, the second is a pointer to the data of a value object
+map<char, Value*> InputParser::getValues()
 {
-  vector<string> inputStrings;
+  map<char, Value*> valueMap;
 
-  string temp = input;
+  // Clear our whitespace for easier modification
+  deleteWhitespace();
 
+  // Loop over the words
+  for (size_t wordIndex = 0; wordIndex < input.size(); wordIndex++ )
+  {
+    // Get our input at the current index
+    char atInd = input.at(wordIndex);
 
+    // Create a holder for if this value is already in the map
+    bool inMap = false;
 
+    // Now we want to try to get the value, but if it fails catch the error of not being in the map
+    try {
+      // Get value, may error out_of_range if atInd isn't in the map
+      Value* myVal = valueMap.at(atInd);
 
-  return inputStrings;
+      // Now if our value isn't a nullptr, set inMap to true!
+      if (myVal != nullptr)
+      {
+        inMap = true;
+      }
+
+    // Now catch an out of range error, and simply say when this is the case, inmap is false
+    } catch (const out_of_range& e)
+    {
+      inMap = false;  
+    }
+
+    if (!inMap && !isOperator(atInd) && atInd != '(' && atInd != ')')
+    {
+      // Variable found
+      Value* madeValue = new Value;
+
+      // Insert our new value into our map
+      valueMap.insert(pair<char, Value*>(atInd, madeValue));
+    }
+  }
+
+  // Finally, return the map we got
+  return valueMap;
 }
 
 void InputParser::deleteWhitespace()

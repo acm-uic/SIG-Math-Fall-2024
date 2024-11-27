@@ -7,11 +7,6 @@ Value::Value()
   value = false;
 }
 
-Value::Value(bool value)
-{
-  this->value = value;
-}
-
 void Value::setValue(bool value)
 {
   this->value = value;
